@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お申し込み｜THE THREAD</title>
+<style>
+  :root{--bg:#faf8f3;--ink:#1a1a1a;--sub:#4a4a4a;--gold:#b8924a;--line:#e6dfd0;--accent:#c46a2e}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Hiragino Mincho ProN","Yu Mincho","游明朝",serif;background:var(--bg);color:var(--ink);line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:680px;margin:0 auto;padding:48px 24px}
+  .hero{text-align:center;padding:24px 0 36px;border-bottom:1px solid var(--line);margin-bottom:36px}
+  .badge{display:inline-block;font-family:"Cormorant Garamond",serif;color:var(--gold);letter-spacing:.2em;font-size:14px;margin-bottom:12px}
+  h1{font-size:24px;font-weight:600;letter-spacing:.05em}
+  form{background:#fff;padding:32px 24px;border:1px solid var(--line)}
+  .field{margin-bottom:24px}
+  .field label{display:block;font-size:14px;font-weight:600;margin-bottom:8px;color:var(--ink)}
+  .req{color:var(--accent);margin-left:4px;font-size:13px}
+  input[type=text],input[type=email],input[type=tel],textarea,select{
+    width:100%;padding:12px;border:1px solid var(--line);background:var(--bg);
+    font-size:15px;font-family:inherit;border-radius:0;
+  }
+  textarea{min-height:80px;resize:vertical}
+  .radio-group{display:flex;flex-direction:column;gap:8px}
+  .radio-group label{font-weight:400;font-size:15px;display:flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid var(--line);background:var(--bg);cursor:pointer;margin:0}
+  .radio-group label:hover{background:#fff}
+  .radio-group input[type=radio]{margin:0}
+  .radio-group label.checked{background:#fff;border-color:var(--gold)}
+  .agree{display:flex;align-items:flex-start;gap:8px;font-size:13px;line-height:1.7;color:var(--sub);margin:24px 0}
+  .agree input{margin-top:4px;flex-shrink:0}
+  .submit{
+    width:100%;padding:18px;background:var(--ink);color:#fff;border:0;
+    font-size:16px;letter-spacing:.1em;cursor:pointer;font-family:inherit;
+  }
+  .submit:hover{background:var(--gold)}
+  .submit:disabled{opacity:.5;cursor:wait}
+  .price-display{background:var(--bg);padding:16px;margin-top:8px;font-size:14px;border-left:3px solid var(--gold)}
+  .price-display b{color:var(--accent);font-size:16px}
+  .note{font-size:12px;color:var(--sub);margin-top:6px;line-height:1.7}
+  .back{display:inline-block;margin-top:24px;font-size:13px;color:var(--sub)}
+  footer{text-align:center;padding:24px;font-size:11px;color:#999;background:#1a1a1a;color:#aaa}
+  @media (max-width:480px){
+    .wrap{padding:32px 16px}
+    form{padding:24px 16px}
+    h1{font-size:20px}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="badge">APPLY</div>
+    <h1>THE THREAD お申し込み</h1>
+  </div>
+
+  <form id="apply-form">
+
+    <div class="field">
+      <label>お名前<span class="req">*</span></label>
+      <input type="text" name="name" required>
+    </div>
+
+    <div class="field">
+      <label>フリガナ<span class="req">*</span></label>
+      <input type="text" name="kana" required>
+    </div>
+
+    <div class="field">
+      <label>メールアドレス<span class="req">*</span></label>
+      <input type="email" name="email" required>
+    </div>
+
+    <div class="field">
+      <label>電話番号<span class="req">*</span></label>
+      <input type="tel" name="tel" required>
+    </div>
+
+    <div class="field">
+      <label>ご希望のプラン<span class="req">*</span></label>
+      <div class="radio-group" id="plan-group">
+        <label><input type="radio" name="plan" value="スタンダード" required> スタンダード（個別4回・グループ3回・90日AI）</label>
+        <label><input type="radio" name="plan" value="Palette"> Palette（個別1回・グループ3回・90日AI）</label>
+        <label><input type="radio" name="plan" value="Sketch"> Sketch（個別1回・30日AI）</label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>早割／通常価格<span class="req">*</span></label>
+      <div class="radio-group">
+        <label><input type="radio" name="early" value="早割" required checked> 早割（〜5/19(火)22時まで）</label>
+        <label><input type="radio" name="early" value="通常"> 通常価格</label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>お支払い回数<span class="req">*</span></label>
+      <div class="radio-group">
+        <label><input type="radio" name="payment" value="一括" required checked> 一括</label>
+        <label><input type="radio" name="payment" value="分割3回"> 分割3回（Sketchプラン除く）</label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>決済方法<span class="req">*</span></label>
+      <div class="radio-group">
+        <label><input type="radio" name="method" value="クレジットカード" required> クレジットカード（Stripe）</label>
+        <label><input type="radio" name="method" value="PayPal"> PayPal</label>
+        <label><input type="radio" name="method" value="銀行振込"> 銀行振込</label>
+      </div>
+      <div class="note">送信後、お選びの決済方法に応じたお支払いリンク（または振込先）を自動返信メールでお送りします。</div>
+    </div>
+
+    <div class="field">
+      <label>選択された金額</label>
+      <div class="price-display" id="price-display">プランと早割／通常を選択すると金額が表示されます</div>
+    </div>
+
+    <div class="field">
+      <label>THE THREADを知ったきっかけ</label>
+      <textarea name="source" placeholder="Instagram／Voicy／メルマガ／ご紹介 など"></textarea>
+    </div>
+
+    <div class="field">
+      <label>お気持ち・このプログラムへの期待</label>
+      <textarea name="message" placeholder="今のお気持ち、よかったらご自由に。"></textarea>
+    </div>
+
+    <label class="agree">
+      <input type="checkbox" name="agreement" required>
+      <span>キャンセルポリシー（お申込み確定後の返金は原則不可）に同意します。</span>
+    </label>
+
+    <button type="submit" class="submit" id="submit-btn">送信する</button>
+
+  </form>
+
+  <a href="index.html" class="back">← トップに戻る</a>
+</div>
+
+<footer>© Institut für Organic Business GmbH</footer>
+
+<script>
+// ⚠ GAS WebアプリURL - デプロイ後に貼り替え
+var GAS_URL = "https://script.google.com/macros/s/AKfycbw81hqNWNlsAnsz2YfgFanbT_yI5HG4bTSz7cXzLcFs61eoyUj7XaRQu7Wuq-cFzo9N9g/exec";
+
+// 価格表
+var PRICE = {
+  'スタンダード':{'早割':{'一括':'231,000円（税込）','分割3回':'月77,000円 × 3回'},'通常':{'一括':'297,000円（税込）','分割3回':'月99,000円 × 3回'}},
+  'Palette':    {'早割':{'一括':'165,000円（税込）','分割3回':'月55,000円 × 3回'},'通常':{'一括':'198,000円（税込）','分割3回':'月66,000円 × 3回'}},
+  'Sketch':     {'早割':{'一括':'55,000円（税込）'},                                '通常':{'一括':'77,000円（税込）'}}
+};
+
+// URLハッシュでプラン自動選択 (#standard / #palette / #sketch)
+var hash = location.hash.replace('#','').toLowerCase();
+var hashMap = {standard:'スタンダード',palette:'Palette',sketch:'Sketch'};
+if (hashMap[hash]) {
+  var radio = document.querySelector('input[name="plan"][value="'+hashMap[hash]+'"]');
+  if (radio) radio.checked = true;
+}
+
+function updatePrice(){
+  var plan = document.querySelector('input[name="plan"]:checked');
+  var early = document.querySelector('input[name="early"]:checked');
+  var payment = document.querySelector('input[name="payment"]:checked');
+  if (!plan || !early || !payment) return;
+  var p = PRICE[plan.value]; if (!p) return;
+  var e = p[early.value]; if (!e) return;
+  var price = e[payment.value];
+  var disp = document.getElementById('price-display');
+  if (price) {
+    disp.innerHTML = '<b>'+price+'</b>';
+  } else {
+    disp.innerHTML = '※ Sketchプランは一括のみとなります。お支払い回数で「一括」をお選びください。';
+  }
+}
+document.querySelectorAll('input[type=radio]').forEach(function(r){r.addEventListener('change',updatePrice)});
+updatePrice();
+
+document.getElementById("apply-form").addEventListener("submit", function(e){
+  e.preventDefault();
+  var btn = document.getElementById("submit-btn");
+  btn.disabled = true;
+  btn.textContent = "送信中...";
+
+  var fd = new FormData(this);
+  var data = {};
+  fd.forEach(function(v,k){data[k]=v});
+
+  fetch(GAS_URL, { method:"POST", body: JSON.stringify(data) })
+    .then(function(res){ return res.json(); })
+    .then(function(result){
+      if (result.result === "success") {
+        window.location.href = "thanks.html";
+      } else {
+        alert("送信中にエラーが発生しました。もう一度お試しください。");
+        btn.disabled = false; btn.textContent = "送信する";
+      }
+    })
+    .catch(function(){
+      alert("通信エラーが発生しました。もう一度お試しください。");
+      btn.disabled = false; btn.textContent = "送信する";
+    });
+});
+</script>
+
+</body>
+</html>
