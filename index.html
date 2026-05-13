@@ -779,16 +779,12 @@
       <input type="text" name="name" required>
     </div>
     <div class="field">
-      <label class="lbl">フリガナ<span class="req">*</span></label>
-      <input type="text" name="kana" required>
-    </div>
-    <div class="field">
       <label class="lbl">メールアドレス<span class="req">*</span></label>
       <input type="email" name="email" required>
     </div>
     <div class="field">
-      <label class="lbl">電話番号<span class="req">*</span></label>
-      <input type="tel" name="tel" required>
+      <label class="lbl">ご住所<span class="req">*</span></label>
+      <input type="text" name="address" placeholder="例：〒150-0001 東京都渋谷区神宮前…" required>
     </div>
     <div class="field">
       <label class="lbl">ご希望のプラン<span class="req">*</span></label>
@@ -829,12 +825,12 @@
       <textarea name="source" placeholder="Instagram／Voicy／メルマガ／ご紹介 など"></textarea>
     </div>
     <div class="field">
-      <label class="lbl">お気持ち・このプログラムへの期待</label>
-      <textarea name="message"></textarea>
+      <label class="lbl">一言メッセージ（任意）</label>
+      <textarea name="message" placeholder="お気持ち・期待など、ご自由にどうぞ"></textarea>
     </div>
     <label class="agree">
       <input type="checkbox" name="agreement" required>
-      <span>キャンセルポリシー（お申込み確定後の返金は原則不可）に同意します。</span>
+      <span><a href="terms.html" target="_blank" style="color:var(--accent);text-decoration:underline">コミュニティ規約</a>および<a href="privacy.html" target="_blank" style="color:var(--accent);text-decoration:underline">プライバシーポリシー</a>を確認し、内容に同意します。</span>
     </label>
     <button type="submit" class="submit" id="submit-btn">送信する</button>
     <p class="note">送信後、自動返信メールでお支払いのご案内をお送りします（数分以内）。届かない場合は迷惑メールフォルダもご確認ください。</p>
