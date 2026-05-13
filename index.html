@@ -180,6 +180,7 @@
   }
   .cta:hover{background:var(--gold)}
   .cta.accent{background:var(--accent)}
+  .cta.accent:hover{background:#9a4d1d}
   .cta.outline{background:#fff;color:var(--ink);border:1px solid var(--ink)}
   .pay-group{margin-top:20px;text-align:left}
   .pay-group .pay-label{
@@ -669,7 +670,7 @@
     <div class="price-early">231,000円<span style="font-size:16px">（税込）</span></div>
     <div class="price-note">分割3回：月 7.7万円　／　<b>5/19(火)22時まで</b></div>
 
-    <a href="#apply-standard" class="cta accent" style="margin-top:20px">スタンダードプランに申し込む</a>
+    <a href="#apply" data-plan="スタンダード" class="cta accent plan-cta" style="margin-top:20px">スタンダードプランに申し込む</a>
     <p style="font-size:12px;color:var(--sub);text-align:center;margin-top:8px;line-height:1.7">お申込フォームから決済方法（クレジットカード／PayPal／銀行振込）をお選びいただけます</p>
   </div>
 
@@ -690,7 +691,7 @@
     <div class="price-early">165,000円<span style="font-size:16px">（税込）</span></div>
     <div class="price-note">分割3回：月 5.5万円　／　<b>5/19(火)22時まで</b></div>
 
-    <a href="#apply-palette" class="cta" style="margin-top:20px">Paletteプランに申し込む</a>
+    <a href="#apply" data-plan="Palette" class="cta plan-cta" style="margin-top:20px">Paletteプランに申し込む</a>
     <p style="font-size:12px;color:var(--sub);text-align:center;margin-top:8px;line-height:1.7">お申込フォームから決済方法（クレジットカード／PayPal／銀行振込）をお選びいただけます</p>
   </div>
 
@@ -708,7 +709,7 @@
     <div class="price-early">55,000円<span style="font-size:16px">（税込）</span></div>
     <div class="price-note"><b>5/19(火)22時まで</b></div>
 
-    <a href="#apply-sketch" class="cta" style="margin-top:20px">Sketchプランに申し込む</a>
+    <a href="#apply" data-plan="Sketch" class="cta plan-cta" style="margin-top:20px">Sketchプランに申し込む</a>
     <p style="font-size:12px;color:var(--sub);text-align:center;margin-top:8px;line-height:1.7">お申込フォームから決済方法（クレジットカード／PayPal／銀行振込）をお選びいただけます</p>
   </div>
 </div>
@@ -917,6 +918,28 @@
   window.addEventListener('scroll',check,{passive:true});
   window.addEventListener('resize',check);
   check();
+})();
+
+// プランCTAクリック時：申込フォームへスクロール＋プラン自動選択
+(function(){
+  document.querySelectorAll('.plan-cta').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      var plan = btn.getAttribute('data-plan');
+      var apply = document.getElementById('apply');
+      if(apply) apply.scrollIntoView({behavior:'smooth', block:'start'});
+      // プラン選択を反映
+      setTimeout(function(){
+        var radios = document.querySelectorAll('input[name="plan"]');
+        radios.forEach(function(r){
+          if(r.value === plan){
+            r.checked = true;
+            r.dispatchEvent(new Event('change', {bubbles:true}));
+          }
+        });
+      }, 400);
+    });
+  });
 })();
 </script>
 
