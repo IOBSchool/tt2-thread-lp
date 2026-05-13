@@ -273,6 +273,18 @@
   .apply-form .submit:hover{background:var(--gold)}
   .apply-form .submit:disabled{opacity:.5;cursor:wait}
   .apply-form .note{font-size:11px;color:var(--sub);margin-top:6px;line-height:1.7}
+  .float-cta{
+    position:fixed;right:20px;bottom:20px;z-index:999;
+    background:var(--accent);color:#fff;text-decoration:none;
+    padding:14px 22px;font-size:14px;letter-spacing:.08em;font-weight:600;
+    border-radius:50px;box-shadow:0 6px 20px rgba(196,106,46,.4);
+    transition:.2s;display:inline-flex;align-items:center;gap:6px;
+  }
+  .float-cta:hover{background:var(--ink);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+  .float-cta::before{content:"▶";font-size:10px}
+  @media (max-width:480px){
+    .float-cta{right:12px;bottom:12px;padding:12px 18px;font-size:13px}
+  }
   .qa .q{font-weight:600;margin-bottom:8px;font-size:15px}
   .qa .q:before{content:"Q. ";color:var(--gold)}
   .qa .a{font-size:14px;color:var(--sub);line-height:1.9}
@@ -890,6 +902,23 @@
 
   </div>
 </section>
+
+<a href="#apply" class="float-cta" id="float-cta">お申し込みへ</a>
+
+<script>
+(function(){
+  var fab = document.getElementById('float-cta');
+  var apply = document.getElementById('apply');
+  if(!fab||!apply) return;
+  function check(){
+    var r = apply.getBoundingClientRect();
+    fab.style.display = (r.top < window.innerHeight && r.bottom > 0) ? 'none' : 'inline-flex';
+  }
+  window.addEventListener('scroll',check,{passive:true});
+  window.addEventListener('resize',check);
+  check();
+})();
+</script>
 
 <footer>
   © Institut für Organic Business GmbH
