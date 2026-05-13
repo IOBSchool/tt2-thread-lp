@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE THREAD｜迷っても、自分に戻れる人になる90日間</title>
+<meta name="description" content="考え行動し続けてきたあなたへ。一人で抱え続けるやり方を手放し、心から心地よい私を取り戻す、90日間の再生プログラム。">
+<meta property="og:title" content="THE THREAD｜迷っても、自分に戻れる人になる90日間">
+<meta property="og:description" content="一人で抱え続けるやり方を手放し、自分を信じ直すための90日。">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --bg:#faf8f3;
+    --ink:#1a1a1a;
+    --sub:#4a4a4a;
+    --gold:#b8924a;
+    --line:#e6dfd0;
+    --accent:#c46a2e;
+    --navy:#1f2742;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Hiragino Mincho ProN","Yu Mincho","游明朝",serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.9;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 24px}
+  section{padding:64px 0;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:none}
+
+  /* HERO */
+  .hero{
+    background:linear-gradient(180deg,#fdfbf6 0%,#f5f0e3 100%);
+    text-align:center;
+    padding:88px 24px 72px;
+    border-bottom:none;
+  }
+  .hero .lead{font-size:14px;color:var(--sub);letter-spacing:.1em;margin-bottom:8px}
+  .hero .sub{font-size:17px;color:var(--sub);margin-bottom:32px;line-height:1.8}
+  .hero h1{
+    font-family:"Cormorant Garamond","Times New Roman",serif;
+    font-size:48px;
+    letter-spacing:.12em;
+    font-weight:500;
+    color:var(--ink);
+    margin:24px 0;
+  }
+  .hero .tagline{
+    font-size:16px;color:var(--sub);margin-top:24px;line-height:2;
+  }
+
+  h2{
+    font-size:24px;
+    font-weight:600;
+    text-align:center;
+    margin-bottom:40px;
+    letter-spacing:.05em;
+    line-height:1.6;
+  }
+  h2 .en{
+    display:block;
+    font-family:"Cormorant Garamond",serif;
+    font-size:28px;
+    color:var(--gold);
+    letter-spacing:.15em;
+    margin-bottom:8px;
+    font-weight:500;
+  }
+
+  p{margin-bottom:18px;font-size:16px;line-height:2}
+  .center{text-align:center}
+  .lead-para{font-size:17px;line-height:2.1;margin-bottom:24px}
+
+  ul.check{list-style:none;padding:0;margin:24px 0}
+  ul.check li{
+    padding:14px 0 14px 32px;
+    position:relative;
+    border-bottom:1px dashed var(--line);
+    line-height:1.8;
+  }
+  ul.check li:before{
+    content:"○";
+    position:absolute;left:6px;top:14px;
+    color:var(--gold);
+    font-weight:bold;
+  }
+
+  .quote{
+    background:#fff;
+    border-left:3px solid var(--gold);
+    padding:24px 24px;
+    margin:24px 0;
+    font-size:15px;
+    line-height:2;
+    color:var(--sub);
+  }
+  .quote .name{display:block;text-align:right;margin-top:12px;font-size:13px;color:var(--gold)}
+  .quote b{color:var(--ink);font-weight:600}
+
+  .step{
+    background:#fff;
+    border:1px solid var(--line);
+    padding:28px 24px;
+    margin-bottom:20px;
+    border-radius:4px;
+  }
+  .step .num{
+    font-family:"Cormorant Garamond",serif;
+    color:var(--gold);
+    font-size:14px;letter-spacing:.2em;
+    margin-bottom:8px;
+  }
+  .step h3{font-size:18px;margin-bottom:12px;line-height:1.6}
+  .step ul{padding-left:20px;font-size:15px;color:var(--sub)}
+  .step ul li{margin-bottom:6px;line-height:1.8}
+
+  .profile{
+    background:#fff;
+    padding:32px 24px;
+    border:1px solid var(--line);
+    margin-bottom:24px;
+  }
+  .profile .photo{
+    width:160px;height:160px;border-radius:50%;
+    object-fit:cover;display:block;margin:0 auto 20px;
+    box-shadow:0 4px 16px rgba(0,0,0,.08);
+    border:3px solid #fff;
+    outline:1px solid var(--line);
+  }
+  .profile h3{font-size:19px;margin-bottom:6px;text-align:center}
+  .profile .role{text-align:center}
+  .profile .role{font-size:13px;color:var(--gold);margin-bottom:16px;letter-spacing:.05em}
+  .profile ul{list-style:none;padding:0;font-size:14px;color:var(--sub)}
+  .profile ul li{padding:6px 0 6px 16px;position:relative;line-height:1.8}
+  .profile ul li:before{content:"・";position:absolute;left:0}
+
+  .price-box{
+    background:#fff;
+    border:2px solid var(--ink);
+    padding:32px 24px;
+    margin:24px 0;
+    text-align:center;
+  }
+  .price-box.featured{border-color:var(--accent);background:#fff8f0;position:relative}
+  .price-box.featured:before{
+    content:"おすすめ";
+    position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+    background:var(--accent);color:#fff;padding:4px 16px;font-size:12px;letter-spacing:.1em;
+  }
+  .plan-name{
+    font-family:"Cormorant Garamond",serif;
+    font-size:22px;letter-spacing:.15em;color:var(--ink);
+    margin-bottom:4px;
+  }
+  .plan-jp{font-size:13px;color:var(--sub);margin-bottom:20px}
+  .price-old{font-size:14px;color:var(--sub);text-decoration:line-through;margin:8px 0}
+  .price-now{font-size:28px;font-weight:600;color:var(--ink);margin:8px 0;letter-spacing:.02em}
+  .price-now .yen{font-size:16px}
+  .price-early{font-size:30px;font-weight:600;color:var(--accent);margin:12px 0}
+  .price-note{font-size:12px;color:var(--sub);margin-top:8px}
+  .plan-includes{text-align:left;margin:20px 0;font-size:14px;color:var(--sub);padding:16px;background:#fafafa}
+  .plan-includes li{padding:4px 0 4px 16px;position:relative;list-style:none;line-height:1.8}
+  .plan-includes li:before{content:"・";position:absolute;left:0;color:var(--gold)}
+
+  .cta{
+    display:block;
+    background:var(--ink);
+    color:#fff;
+    text-align:center;
+    padding:20px;
+    text-decoration:none;
+    font-size:16px;
+    letter-spacing:.1em;
+    margin:16px 0;
+    transition:.2s;
+  }
+  .cta:hover{background:var(--gold)}
+  .cta.accent{background:var(--accent)}
+  .cta.outline{background:#fff;color:var(--ink);border:1px solid var(--ink)}
+  .pay-group{margin-top:20px;text-align:left}
+  .pay-group .pay-label{
+    font-size:12px;letter-spacing:.1em;color:var(--sub);
+    margin:14px 0 8px;padding-bottom:6px;border-bottom:1px dashed var(--line);
+  }
+  .pay-group .pay-label.early{color:var(--accent);font-weight:600}
+  .pay-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .pay-btn{
+    display:block;padding:12px 10px;text-decoration:none;
+    background:#fff;border:1px solid var(--ink);color:var(--ink);
+    text-align:center;font-size:13px;letter-spacing:.03em;
+    transition:.2s;
+  }
+  .pay-btn:hover{background:var(--ink);color:#fff}
+  .pay-btn.paypal{border-color:#003087;color:#003087}
+  .pay-btn.paypal:hover{background:#003087;color:#fff}
+  .pay-btn.stripe{border-color:#635bff;color:#635bff}
+  .pay-btn.stripe:hover{background:#635bff;color:#fff}
+  .pay-btn.bank{grid-column:1/-1;border-color:var(--sub);color:var(--sub)}
+  .pay-btn.bank:hover{background:var(--sub);color:#fff}
+  .pay-btn .method{font-size:11px;display:block;opacity:.7;margin-bottom:2px;letter-spacing:.1em}
+  @media (max-width:380px){
+    .pay-btns{grid-template-columns:1fr}
+  }
+
+  .schedule{
+    background:#fff;
+    padding:24px;
+    border:1px solid var(--line);
+  }
+  .schedule .row{
+    display:flex;
+    padding:12px 0;
+    border-bottom:1px dashed var(--line);
+    font-size:15px;
+  }
+  .schedule .row:last-child{border-bottom:none}
+  .schedule .date{flex:0 0 110px;color:var(--gold);font-weight:600;font-size:14px}
+  .schedule .ev{flex:1;line-height:1.7}
+
+  .value-list{background:#fff;padding:24px;border:1px solid var(--line);margin:24px 0}
+  .value-list .row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed var(--line);font-size:15px}
+  .value-list .row:last-child{border-bottom:none}
+  .value-total{
+    text-align:center;
+    font-size:22px;
+    font-weight:600;
+    margin-top:24px;
+    padding:20px;
+    background:#fff8f0;
+    border:1px solid var(--gold);
+  }
+  .value-total .num{color:var(--accent);font-size:28px}
+
+  .video-wrap{
+    position:relative;width:100%;padding-bottom:56.25%;height:0;
+    overflow:hidden;background:#000;
+    box-shadow:0 8px 32px rgba(0,0,0,.12);
+    margin:24px 0 16px;
+  }
+  .video-wrap iframe{
+    position:absolute;top:0;left:0;width:100%;height:100%;border:0;
+  }
+  .video-caption{
+    text-align:center;font-size:13px;color:var(--sub);
+    line-height:1.8;margin-top:12px;
+  }
+  .qa{margin-bottom:20px;background:#fff;padding:20px;border-left:3px solid var(--gold)}
+  .qa .q{font-weight:600;margin-bottom:8px;font-size:15px}
+  .qa .q:before{content:"Q. ";color:var(--gold)}
+  .qa .a{font-size:14px;color:var(--sub);line-height:1.9}
+  .qa .a:before{content:"A. ";color:var(--gold);font-weight:600}
+
+  .closing{
+    background:linear-gradient(180deg,#f5f0e3 0%,#fdfbf6 100%);
+    text-align:center;
+    padding:72px 24px;
+  }
+  .closing p{font-size:17px;line-height:2.2;margin-bottom:20px}
+  .closing .signature{font-size:15px;color:var(--sub);margin-top:32px}
+
+  footer{
+    text-align:center;
+    padding:32px 24px;
+    font-size:12px;
+    color:var(--sub);
+    background:#1a1a1a;
+    color:#999;
+  }
+
+  .deadline-banner{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    background:var(--accent);color:#fff;
+    text-align:center;padding:10px 12px;
+    font-size:13px;letter-spacing:.03em;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+  }
+  .deadline-banner .label{font-size:11px;opacity:.9;letter-spacing:.1em;margin-bottom:2px}
+  .deadline-banner .countdown{
+    font-family:"Cormorant Garamond","Times New Roman",serif;
+    font-size:18px;font-weight:600;letter-spacing:.05em;
+  }
+  .deadline-banner .countdown .unit{font-size:11px;opacity:.85;margin:0 6px 0 2px;font-family:"Hiragino Sans",sans-serif;font-weight:400}
+  .deadline-banner .countdown .num{display:inline-block;min-width:1.4em}
+  .deadline-banner .ended{font-size:14px;font-weight:600}
+  body{padding-top:62px}
+  @media (max-width:480px){
+    body{padding-top:58px}
+    .deadline-banner .countdown{font-size:16px}
+    .deadline-banner .label{font-size:10px}
+  }
+
+  /* スマホ最適化 */
+  @media (max-width:480px){
+    .hero{padding:64px 20px 56px}
+    .hero h1{font-size:36px}
+    .hero .sub{font-size:15px}
+    .wrap{padding:0 20px}
+    section{padding:48px 0}
+    h2{font-size:20px}
+    h2 .en{font-size:24px}
+    p{font-size:15px}
+    .price-now,.price-early{font-size:24px}
+    .value-total{font-size:18px}
+    .value-total .num{font-size:24px}
+  }
+</style>
+</head>
+<body>
+
+<div class="deadline-banner" id="deadlineBanner">
+  <div class="label">早割締切まで（5/19(火) 22:00 JST）</div>
+  <div class="countdown" id="countdown">
+    <span class="num" id="cdDays">--</span><span class="unit">日</span>
+    <span class="num" id="cdHours">--</span><span class="unit">時間</span>
+    <span class="num" id="cdMins">--</span><span class="unit">分</span>
+    <span class="num" id="cdSecs">--</span><span class="unit">秒</span>
+  </div>
+</div>
+<script>
+(function(){
+  // 早割締切：2026-05-19 22:00 JST (UTC+9)
+  var deadline = new Date('2026-05-19T22:00:00+09:00').getTime();
+  var elD=document.getElementById('cdDays'),
+      elH=document.getElementById('cdHours'),
+      elM=document.getElementById('cdMins'),
+      elS=document.getElementById('cdSecs'),
+      cd=document.getElementById('countdown');
+  function pad(n){return n<10?'0'+n:''+n}
+  function tick(){
+    var now=new Date().getTime();
+    var diff=deadline-now;
+    if(diff<=0){
+      cd.innerHTML='<span class="ended">早割は終了しました　通常価格でご案内中</span>';
+      clearInterval(timer);
+      return;
+    }
+    var d=Math.floor(diff/86400000);
+    var h=Math.floor(diff%86400000/3600000);
+    var m=Math.floor(diff%3600000/60000);
+    var s=Math.floor(diff%60000/1000);
+    elD.textContent=d;
+    elH.textContent=pad(h);
+    elM.textContent=pad(m);
+    elS.textContent=pad(s);
+  }
+  tick();
+  var timer=setInterval(tick,1000);
+})();
+</script>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="lead">《考え、行動し続けてきた人のためのプログラム》</div>
+  <div class="sub">迷っても、自分に戻れる人になる90日間</div>
+  <h1>THE THREAD</h1>
+  <div class="tagline">
+    もやもや、ズレ、違和感。<br>
+    ここで一度、立ち止まって、自分に戻る90日。
+  </div>
+</header>
+
+<!-- 共感パート -->
+<section>
+<div class="wrap">
+  <h2>こんな感覚、ありませんか？</h2>
+  <ul class="check">
+    <li>ちゃんと考えているはずなのに、決めきれない</li>
+    <li>やることは山ほどあるのに、どれも後回しにできない</li>
+    <li>「いい人」「しっかりしてる」と言われるほど、力が抜けなくなる</li>
+    <li>困っていても、「自分で考えた方が早い」と抱えてしまう</li>
+  </ul>
+  <p class="center" style="color:var(--sub);font-size:15px;margin-top:24px">
+    どれも、あなたの意思が弱いからではありません。<br>
+    一人で考え、選び、引き受けてきた人ほど起きる状態です。
+  </p>
+</div>
+</section>
+
+<!-- ストーリー -->
+<section>
+<div class="wrap">
+  <p class="lead-para">これまでは、そのやり方で、やってこれた。</p>
+  <p class="lead-para">考えて、選んで、引き受けて、一人で答えを出してきた。</p>
+  <p class="lead-para">でも、同じやり方を、これからも続けたいかという問いが、ふと浮かぶようになったとしたら——。</p>
+  <p class="lead-para">それは、あなたが弱くなったからではありません。</p>
+  <p class="lead-para center" style="font-size:18px;margin-top:32px"><b>一人で抱え続けるやり方を、<br>そろそろ変えてもいいタイミングかもしれません。</b></p>
+</div>
+</section>
+
+<!-- THREADとは -->
+<section style="background:#fff">
+<div class="wrap">
+  <h2><span class="en">THE THREAD</span>とは</h2>
+  <p class="lead-para center">
+    それでも立ち止まらずに生きてきたあなたは<br>本当にすごい。
+  </p>
+  <p class="lead-para center" style="margin-top:32px">
+    THE THREAD は、<br>
+    そんなあなたが <b>「今の自分を責めずに」</b><br>
+    <b>「一人で抱え続けるやり方を手放し」</b><br>
+    自分を信じ直すための、<b>90日</b>です。
+  </p>
+</div>
+</section>
+
+<!-- 3STEP -->
+<section>
+<div class="wrap">
+  <h2><span class="en">3 STEPS</span>THE THREADの3ステップ</h2>
+
+  <div class="step">
+    <div class="num">STEP 1 ／ 1ヶ月目</div>
+    <h3>自分の"今"に戻れるようになる</h3>
+    <ul>
+      <li>日常の出来事を使って内省できるようになる</li>
+      <li>反射的に頑張ったり、正解探しを始める回数が減る</li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <div class="num">STEP 2 ／ 2ヶ月目</div>
+    <h3>繰り返し現れる"自分の型"が見えてくる</h3>
+    <ul>
+      <li>同じところで迷う・苦しくなるパターンに気づく</li>
+      <li>自分を責めるクセが弱まる</li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <div class="num">STEP 3 ／ 3ヶ月目</div>
+    <h3>自分の軸を持ったまま、日常に戻っていく</h3>
+    <ul>
+      <li>迷っても戻れる感覚・問いを自分の中に持てる</li>
+      <li>他人の正解を見ても、すぐに振り回されなくなる</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- 得られる未来 -->
+<section style="background:#fff">
+<div class="wrap">
+  <h2>受講で得られる未来</h2>
+  <ul class="check">
+    <li>朝目が覚めて「大丈夫、今日もわたしでいい」と思える</li>
+    <li>迷っても、自分にとって心地よい方を選べるようになる</li>
+    <li>ひとりで抱えなくていいという"安心感"が、日常を支えてくれる</li>
+  </ul>
+  <p class="center" style="margin-top:32px;font-size:17px;line-height:2.2">
+    ここで目指すのは、<b>"新しい自分になる"</b>ことじゃない。<br><br>
+    ずっと奥にいた<b>"ほんとうの自分"</b>に<br>
+    優しく還っていく旅です。
+  </p>
+</div>
+</section>
+
+<!-- 参加者の声 -->
+<section>
+<div class="wrap">
+  <h2><span class="en">VOICE</span>THE THREAD参加者の声</h2>
+
+  <div class="quote">
+    自分が思いもかけない視点からの問いかけで、<b>無意識に蓋をしていたものの輪郭が見えました</b>。
+    <span class="name">— Tさん</span>
+  </div>
+
+  <div class="quote">
+    "存在するだけで価値がある"っていうより、自分が誰かや何かの役に立っても立ってなくても、<b>どっちでもいい</b>、というふわっとした感覚に近い。
+    <span class="name">— Tさん</span>
+  </div>
+
+  <div class="quote">
+    モヤモヤを解消する場だと思っていたけど、<b>ワクワクが止まらない</b>くらい楽しい時間だった。
+    <span class="name">— Rさん</span>
+  </div>
+
+  <h2 style="margin-top:64px"><span class="en">AI COACH</span>AIコーチの感想</h2>
+
+  <div class="quote">
+    嫌なことをぐるぐる考えて疲れる夜。AIコーチに吐き出したら、<b>自分の大切にしたいものが見えてきた</b>。正解を出すより、自分を分かってあげる。それだけでこんなに穏やかに眠れるなんて、斬新で心地いい体験でした。
+    <span class="name">— Rさん</span>
+  </div>
+
+  <div class="quote">
+    ネガティブな自分を排除しようと必死でした。でも『自分を守るための誠実な機能』だと言ってもらえて、涙が出そうに。<b>戦わなくていい、ただ自分に戻ればいいんだ</b>って思えたら、本当に救われました。
+    <span class="name">— Rさん</span>
+  </div>
+</div>
+</section>
+
+<!-- 1期生 座談会 -->
+<section>
+<div class="wrap">
+  <h2><span class="en">ROUND TABLE</span>1期生 座談会</h2>
+  <p class="center" style="font-size:15px;color:var(--sub);margin-bottom:8px;line-height:1.9">
+    今年1月にスタートした1期メンバーたちが、<br>
+    90日間で何が起き、何が変わったのかを語り合いました。
+  </p>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/B0XeOKjS_fg"
+            title="THE THREAD 1期生 座談会"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+  </div>
+  <p class="video-caption">THE THREAD 1期生 × レムケなつこ ＆ コーチはったー</p>
+</div>
+</section>
+
+<!-- 提供内容 -->
+<section style="background:#fff">
+<div class="wrap">
+  <h2>THE THREAD の提供内容</h2>
+  <ul class="check">
+    <li><b>グループコーチング：60分 × 3回</b><br><span style="font-size:13px;color:var(--sub)">月に一回、毎月木曜夜20時開催。レムケなつこ・はったー参加。参加者でワークを行い、シェアを行う。</span></li>
+    <li><b>個別コーチング：60分 × 4回</b><br><span style="font-size:13px;color:var(--sub)">はったーと1on1で個別にコーチング</span></li>
+    <li><b>AIコーチング：24時間 × 90日間</b></li>
+    <li><b>BANDコミュニティ</b>：受講生同士の交流</li>
+    <li><b>修了後コミュニティ「Tapestry Circle」参加権</b></li>
+    <li><b>オリエンテーション、最終発表会、東京交流会</b></li>
+  </ul>
+</div>
+</section>
+
+<!-- スケジュール -->
+<section>
+<div class="wrap">
+  <h2><span class="en">SCHEDULE</span>THE THREAD の流れ</h2>
+  <div class="schedule">
+    <div class="row"><div class="date">6/1 (木)</div><div class="ev">20時〜22時　オリエンテーション</div></div>
+    <div class="row"><div class="date">6/2〜</div><div class="ev">初回個別コーチング スタート</div></div>
+    <div class="row"><div class="date">6/11 (木)</div><div class="ev">初回グループコーチング ＋ 個別コーチング</div></div>
+    <div class="row"><div class="date">7/9 (木)</div><div class="ev">2回目グループコーチング ＋ 個別コーチング</div></div>
+    <div class="row"><div class="date">8/4 (火)</div><div class="ev">3回目グループコーチング ＋ 個別コーチング</div></div>
+    <div class="row"><div class="date">8/27 (木)</div><div class="ev">最終発表（任意）</div></div>
+    <div class="row"><div class="date">6/9 (火)</div><div class="ev">東京ランチ交流会　昼開催（任意）</div></div>
+  </div>
+</div>
+</section>
+
+<!-- 主催・コーチ -->
+<section style="background:#fff">
+<div class="wrap">
+  <h2>主催・コーチ紹介</h2>
+
+  <div class="profile">
+    <img src="images/natsuko.jpg" alt="レムケなつこ" class="photo" style="object-position:center 20%">
+    <div class="role">THE THREAD 主催</div>
+    <h3>レムケなつこ（THE THREAD AIコーチ開発者）</h3>
+    <p style="font-size:14px;color:var(--sub);margin-bottom:12px">オーガニックビジネス研究所 CEO／ドイツ在住</p>
+    <ul>
+      <li>IFOAM欧州本部リーダーシップ・プログラム 日本人初選出</li>
+      <li>JICA専門家・南米での支援活動を経て、「オーガニックは、すべての命を幸せにする仕組み®」という理念で活動</li>
+      <li>Forbes JAPAN連載、著書Amazon1位など、確かな実績と信頼。</li>
+    </ul>
+    <p style="margin-top:16px;font-size:14px;line-height:1.9">THE THREAD は、その理念から生まれた、<b>心と体を整える新しいアプローチ</b>です。</p>
+  </div>
+
+  <div class="profile">
+    <img src="images/hatano.jpg" alt="羽田野嘉雄" class="photo">
+    <div class="role">THE THREAD コーチ</div>
+    <h3>羽田野嘉雄（ライフデザインサポーター／ライフコーチ）</h3>
+    <ul>
+      <li>外装エンジニアとして17年間、責任と成果を求められる現場でキャリアを築く。</li>
+      <li>40歳を前に退職し、「思考優位」から「感性と調和した生き方」への転換を実践。</li>
+      <li>ウェルビーイング × コーチングで自己実現と心地よい人生設計を支援している。</li>
+    </ul>
+    <p style="margin-top:16px;font-size:14px;line-height:1.9">受講生から<b>「心地良い安心を感じ、内観が深まるコーチングの時間」</b>と言われる、安心と共感のプロフェッショナルです。</p>
+  </div>
+</div>
+</section>
+
+<!-- Tapestry Circle -->
+<section>
+<div class="wrap">
+  <h2><span class="en">Tapestry Circle</span>修了後コミュニティ</h2>
+  <p class="center" style="font-size:15px;color:var(--sub);margin-bottom:24px">一過性で終わらない。<br>再生のその先も、安心してつながれる場所。</p>
+  <ul class="check">
+    <li>成果やゴールよりも、日々の営みそのものを大切にする</li>
+    <li>混乱しても迷っても、また自分に戻ってこれる安心感</li>
+    <li>自分の糸と、仲間の糸が交わりながら、一人ではできない織りものが生まれる</li>
+    <li>完璧じゃなくていい。「今のあなた」を、そのまま受けとめる場所</li>
+  </ul>
+  <div class="schedule" style="margin-top:24px">
+    <div class="row"><div class="date">提供内容</div><div class="ev">グループコーチング60分（3ヶ月に1回）／AIコーチング24時間／BANDコミュニティ／東京交流会（半年に1回予定）</div></div>
+    <div class="row"><div class="date">料金</div><div class="ev">月額 5,500円（最小加入期間：3ヶ月）／年間払い 55,000円</div></div>
+  </div>
+</div>
+</section>
+
+<!-- 参考価格 -->
+<section style="background:#fff">
+<div class="wrap">
+  <h2>THE THREAD に含まれるサービス参考価格</h2>
+  <div class="value-list">
+    <div class="row"><span>個別コーチング</span><span>132,000円</span></div>
+    <div class="row"><span>グループコーチング</span><span>99,000円</span></div>
+    <div class="row"><span>AIコーチング</span><span>55,000円</span></div>
+    <div class="row"><span>オリエンなどイベント参加権</span><span>66,000円</span></div>
+    <div class="row"><span>BANDコミュニティ参加権</span><span>44,000円</span></div>
+    <div class="row"><span>Tapestry Circle 参加権</span><span>33,000円</span></div>
+  </div>
+  <div class="value-total">
+    合計　<span class="num">429,000円</span>　相当
+  </div>
+</div>
+</section>
+
+<!-- 料金プラン -->
+<section id="price">
+<div class="wrap">
+  <h2><span class="en">PLANS</span>料金プラン</h2>
+
+  <!-- スタンダード -->
+  <div class="price-box featured">
+    <div class="plan-name">STANDARD</div>
+    <div class="plan-jp">スタンダードプラン</div>
+    <ul class="plan-includes">
+      <li>個別コーチング：60分 × 4回</li>
+      <li>グループコーチング：60分 × 3回</li>
+      <li>AIコーチング：24時間 × 90日</li>
+      <li>BANDコミュニティ／Tapestry Circle 参加権</li>
+      <li>オリエン・最終発表会・東京交流会</li>
+    </ul>
+    <div class="price-old">通常価格 429,000円（税込）</div>
+    <div class="price-now">価格 297,000円<span class="yen">（税込）</span></div>
+    <div class="price-note">分割3回：月 9.9万円</div>
+    <div style="border-top:1px dashed var(--line);margin:20px 0"></div>
+    <div style="font-size:13px;color:var(--accent);letter-spacing:.1em">EARLY BIRD ／ 早割</div>
+    <div class="price-early">231,000円<span style="font-size:16px">（税込）</span></div>
+    <div class="price-note">分割3回：月 7.7万円　／　<b>5/19(火)22時まで</b></div>
+
+    <div class="pay-group">
+      <div class="pay-label early">▼ 早割でお申し込み（〜5/19 22時）</div>
+      <div class="pay-btns">
+        <a href="https://buy.stripe.com/3cIbJ20wbgra7q1gvh1kA0o" target="_blank" rel="noopener" class="pay-btn stripe"><span class="method">クレジットカード</span>一括 231,000円</a>
+        <a href="https://buy.stripe.com/00wdRa1Af0scdOpfrd1kA0v" target="_blank" rel="noopener" class="pay-btn stripe"><span class="method">クレジットカード</span>分割 月77,000円×3</a>
+        <a href="bank-transfer.html" class="pay-btn bank">銀行振込でお申し込み</a>
+      </div>
+      <div class="pay-label">▼ 通常価格</div>
+      <div class="pay-btns">
+        <a href="https://buy.stripe.com/cNifZi2EjgradOp1An1kA0q" target="_blank" rel="noopener" class="pay-btn stripe"><span class="method">クレジットカード</span>一括 297,000円</a>
+        <a href="https://buy.stripe.com/eVq5kE1Af5Mw4dP6UH1kA0y" target="_blank" rel="noopener" class="pay-btn stripe"><span class="method">クレジットカード</span>分割 月99,000円×3</a>
+        <a href="bank-transfer.html" class="pay-btn bank">銀行振込でお申し込み</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Palette -->
+  <div class="price-box">
+    <div class="plan-name">Palette</div>
+    <div class="plan-jp">Paletteプラン</div>
+    <ul class="plan-includes">
+      <li>グループコーチング：60分 × 3回</li>
+      <li>個別コーチング：60分 × 1回</li>
+      <li>AIコーチング：24時間 × 90日</li>
+      <li>BAND・Tapestry 参加権</li>
+    </ul>
+    <div class="price-now">価格 198,000円<span class="yen">（税込）</span></div>
+    <div class="price-note">分割3回：月 6.6万円</div>
+    <div style="border-top:1px dashed var(--line);margin:20px 0"></div>
+    <div style="font-size:13px;color:var(--accent);letter-spacing:.1em">EARLY BIRD ／ 早割</div>
+    <div class="price-early">165,000円<span style="font-size:16px">（税込）</span></div>
+    <div class="price-note">分割3回：月 5.5万円　／　<b>5/19(火)22時まで</b></div>
+
+    <div class="pay-group">
+      <div class="pay-label early">▼ 早割でお申し込み（〜5/19 22時）</div>
+      <div class="pay-btns">
+        <a href="https://buy.stripe.com/14AfZigv95MwaCd6UH1kA0r" target="_blank" rel="noopener" class="pay-btn stripe"><span class="method">クレジットカード</span>一括 165,000円</a>
+        <a href="https://buy.stripe.com/dRm5kEgv94Is7q10wj1kA0w" target="_blank" rel="noopener" class="pay-btn stripe"><span class="method">クレジットカード</span>分割 月55,000円×3</a>
+        <a href="bank-transfer.html" class="pay-btn bank">銀行振込でお申し込み</a>
+      </div>
+      <div class="pay-label">▼ 通常価格</div>
+      <div class="pay-btns">
+        <a href="https://buy.stripe.com/eVqfZi2Ejfn66lXfrd1kA0s" target="_blank" rel="noopener" class="pay-btn stripe"><span class="method">クレジットカード</span>一括 198,000円</a>
+        <a href="https://buy.stripe.com/14A28sa6L6QAh0B7YL1kA0x" target="_blank" rel="noopener" class="pay-btn stripe"><span class="method">クレジットカード</span>分割 月66,000円×3</a>
+        <a href="bank-transfer.html" class="pay-btn bank">銀行振込でお申し込み</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sketch -->
+  <div class="price-box">
+    <div class="plan-name">Sketch</div>
+    <div class="plan-jp">Sketchプラン</div>
+    <ul class="plan-includes">
+      <li>個別コーチング：60分 × 1回</li>
+      <li>AIコーチング：24時間 × 30日</li>
+    </ul>
+    <div class="price-now">価格 77,000円<span class="yen">（税込）</span></div>
+    <div style="border-top:1px dashed var(--line);margin:20px 0"></div>
+    <div style="font-size:13px;color:var(--accent);letter-spacing:.1em">EARLY BIRD ／ 早割</div>
+    <div class="price-early">55,000円<span style="font-size:16px">（税込）</span></div>
+    <div class="price-note"><b>5/19(火)22時まで</b></div>
+
+    <div class="pay-group">
+      <div class="pay-label early">▼ 早割でお申し込み（〜5/19 22時）</div>
+      <div class="pay-btns">
+        <a href="https://buy.stripe.com/3cI7sM3Ina2MaCd5QD1kA0t" target="_blank" rel="noopener" class="pay-btn stripe"><span class="method">クレジットカード</span>一括 55,000円</a>
+        <a href="bank-transfer.html" class="pay-btn bank">銀行振込でお申し込み</a>
+      </div>
+      <div class="pay-label">▼ 通常価格</div>
+      <div class="pay-btns">
+        <a href="https://buy.stripe.com/fZuaEY5Qvgra6lX0wj1kA0u" target="_blank" rel="noopener" class="pay-btn stripe"><span class="method">クレジットカード</span>一括 77,000円</a>
+        <a href="bank-transfer.html" class="pay-btn bank">銀行振込でお申し込み</a>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- 個別相談 -->
+<section id="apply" style="background:#fff">
+<div class="wrap">
+  <h2><span class="en">FREE CONSULTATION</span>申し込み前の無料個別相談</h2>
+  <p class="center" style="font-size:15px;margin-bottom:32px;color:var(--sub)">プラン選びに迷う方・話してから決めたい方へ。</p>
+
+  <div style="padding:24px;background:var(--bg);border:1px solid var(--line)">
+    <h3 style="font-size:17px;margin-bottom:12px;text-align:center">無料個別相談</h3>
+    <p style="font-size:14px;line-height:1.9;color:var(--sub)">
+      申し込み前に話してみたい方へ。<br>
+      率直な今のお気持ちを聞かせてください。Time Rexリンクよりご希望の日時を選択してください。
+    </p>
+    <p style="font-size:14px;margin-top:12px;color:var(--sub)">
+      <b>【無料個別相談 対応日時】</b><br>
+      ・5月14日(木)：15時〜22時<br>
+      ・5月15日(金)：17時〜19時30分
+    </p>
+    <a href="https://timerex.net/s/yoshio.wellbeing_9f00/49d0f166/" target="_blank" rel="noopener" class="cta outline" style="margin-top:16px">無料個別相談を予約する</a>
+  </div>
+</div>
+</section>
+
+<!-- Q&A -->
+<section>
+<div class="wrap">
+  <h2><span class="en">Q &amp; A</span>よくあるご質問</h2>
+
+  <div class="qa">
+    <div class="q">AIが苦手でも大丈夫ですか？</div>
+    <div class="a">はい、まったく問題ありません。シンプルで直感的な設計になっており、使い方も丁寧にサポートします。実際に「機械が苦手」という方も安心して使いこなせています。</div>
+  </div>
+
+  <div class="qa">
+    <div class="q">忙しくて時間が取れるか不安です。</div>
+    <div class="a">「毎日5分から」で大丈夫。心に負担をかけない設計なので、スキマ時間に進められます。忙しい方ほど「この時間が癒し」と感じて続けられると思います。</div>
+  </div>
+
+  <div class="qa">
+    <div class="q">人と比べてしまいそうで不安です。</div>
+    <div class="a">THE THREAD のコミュニティは、「比べない・競わない」を大切にしています。誰かと比べるのではなく、「昨日の自分と向き合う場」として安心してご参加いただけたらと思います。</div>
+  </div>
+
+  <div class="qa">
+    <div class="q">本当に変われますか？</div>
+    <div class="a">変わるというより、「すでにあなたの中にあるものを"思い出す"」。それがこのプログラムの特徴です。</div>
+  </div>
+</div>
+</section>
+
+<!-- クロージング -->
+<section class="closing">
+  <div class="wrap">
+    <p style="font-size:20px;line-height:2"><b>「ありのままの私で、大丈夫」</b><br>そんなふうに、自分を信じられるようになる90日間です。</p>
+
+    <p style="margin-top:48px">オーガニックが好きなあなたにこそ、<br>2026年、自分自身をいちばん幸せにする<br>選択をしてほしいと願っています。</p>
+
+    <p>あなたの中には、<br>ちゃんと<b>"あなたを幸せにできる力"</b>がすでにある。</p>
+
+    <p style="font-size:18px;margin-top:24px"><b>その糸を、一緒にたぐり寄せていきましょう。</b></p>
+
+    <div class="signature">
+      レムケなつこ　＆　コーチはったー<br>
+      <span style="font-size:13px">THE THREAD 主催</span>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © Institut für Organic Business GmbH
+</footer>
+
+</body>
+</html>

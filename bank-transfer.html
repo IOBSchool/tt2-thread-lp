@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>銀行振込でのお申し込み｜THE THREAD</title>
+<meta name="robots" content="noindex">
+<style>
+  :root{--bg:#faf8f3;--ink:#1a1a1a;--sub:#4a4a4a;--gold:#b8924a;--line:#e6dfd0;--accent:#c46a2e}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:"Hiragino Mincho ProN","Yu Mincho","游明朝",serif;
+    background:var(--bg);color:var(--ink);line-height:1.9;font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:64px 24px}
+  .hero{text-align:center;padding:32px 0 48px;border-bottom:1px solid var(--line);margin-bottom:48px}
+  .badge{
+    display:inline-block;font-family:"Cormorant Garamond",serif;
+    color:var(--gold);letter-spacing:.2em;font-size:14px;margin-bottom:16px;
+  }
+  h1{
+    font-family:"Hiragino Mincho ProN",serif;
+    font-size:26px;letter-spacing:.05em;font-weight:600;margin-bottom:12px;
+  }
+  .sub-jp{font-size:15px;color:var(--sub);line-height:1.9}
+  h2{
+    font-size:18px;font-weight:600;margin:40px 0 16px;
+    padding-bottom:10px;border-bottom:1px solid var(--line);letter-spacing:.05em;
+  }
+  p{margin-bottom:16px;line-height:2}
+
+  .steps{background:#fff;padding:24px;border:1px solid var(--line);margin:24px 0}
+  .step{padding:16px 0;border-bottom:1px dashed var(--line)}
+  .step:last-child{border-bottom:none}
+  .step .num{
+    font-family:"Cormorant Garamond",serif;color:var(--gold);
+    font-size:13px;letter-spacing:.2em;margin-bottom:6px;
+  }
+  .step .ttl{font-size:16px;font-weight:600;margin-bottom:6px}
+  .step .desc{font-size:14px;color:var(--sub);line-height:1.9}
+
+  .bank-box{
+    background:#fff;border:2px solid var(--ink);padding:28px 24px;margin:24px 0;
+  }
+  .bank-box .label{
+    font-family:"Cormorant Garamond",serif;color:var(--gold);
+    letter-spacing:.2em;font-size:13px;margin-bottom:16px;
+  }
+  .bank-box dl{display:grid;grid-template-columns:120px 1fr;gap:12px 16px;font-size:15px}
+  .bank-box dt{color:var(--sub);font-size:13px;padding-top:4px}
+  .bank-box dd{font-weight:600;letter-spacing:.02em}
+  .bank-box .note{margin-top:20px;padding:14px;background:var(--bg);font-size:13px;color:var(--sub);line-height:1.9;border-left:3px solid var(--gold)}
+
+  .price-table{background:#fff;border:1px solid var(--line);margin:24px 0}
+  .price-table .row{display:flex;padding:14px 18px;border-bottom:1px dashed var(--line);font-size:14px;align-items:center}
+  .price-table .row:last-child{border-bottom:none}
+  .price-table .row.head{background:#fafafa;font-weight:600;font-size:13px;color:var(--sub);letter-spacing:.05em}
+  .price-table .plan{flex:1.2}
+  .price-table .early{flex:1;color:var(--accent);font-weight:600}
+  .price-table .reg{flex:1;color:var(--sub)}
+
+  .alert{
+    background:#fff8f0;border:1px solid var(--gold);padding:18px;margin:24px 0;
+    font-size:14px;color:var(--sub);line-height:1.9;
+  }
+  .alert b{color:var(--accent)}
+
+  .form-box{background:#fff;padding:24px;border:1px solid var(--line);margin:24px 0}
+  .form-box h3{font-size:16px;margin-bottom:12px}
+  .form-box p{font-size:14px;color:var(--sub);line-height:1.9;margin-bottom:16px}
+
+  .cta{
+    display:block;background:var(--ink);color:#fff;text-align:center;
+    padding:18px;text-decoration:none;font-size:15px;letter-spacing:.1em;
+    margin:16px 0;transition:.2s;
+  }
+  .cta:hover{background:var(--gold)}
+  .cta.outline{background:#fff;color:var(--ink);border:1px solid var(--ink)}
+
+  .contact{background:#fff;padding:24px;border:1px solid var(--line);font-size:14px;line-height:2;color:var(--sub)}
+  .contact b{color:var(--ink)}
+
+  footer{text-align:center;padding:32px 24px;font-size:12px;color:#999;background:#1a1a1a}
+
+  @media (max-width:480px){
+    .wrap{padding:48px 20px}
+    h1{font-size:22px}
+    .bank-box dl{grid-template-columns:1fr;gap:4px 0}
+    .bank-box dt{padding-top:12px;border-top:1px dashed var(--line)}
+    .bank-box dt:first-child{border-top:none;padding-top:0}
+    .price-table .row{flex-direction:column;align-items:flex-start;gap:4px}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">BANK TRANSFER</div>
+    <h1>銀行振込でのお申し込み</h1>
+    <p class="sub-jp">下記の手順でお申し込みを完了してください。</p>
+  </div>
+
+  <h2>お申し込みの3ステップ</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="num">STEP 1</div>
+      <div class="ttl">お申込フォームを送信</div>
+      <div class="desc">下記の「お申込フォームに進む」より、お名前・ご連絡先・選択プランをお知らせください。</div>
+    </div>
+    <div class="step">
+      <div class="num">STEP 2</div>
+      <div class="ttl">下記の口座へお振込み</div>
+      <div class="desc">フォーム送信後、5日以内に下記の口座へお振込みをお願いします。<br>振込手数料はお客様ご負担にてお願いいたします。</div>
+    </div>
+    <div class="step">
+      <div class="num">STEP 3</div>
+      <div class="ttl">事務局よりご連絡</div>
+      <div class="desc">入金確認後、事務局より「お申込み完了」のメールと、BANDコミュニティ・オリエンテーション案内をお送りします。</div>
+    </div>
+  </div>
+
+  <h2>お振込先</h2>
+  <div class="bank-box">
+    <div class="label">日本の銀行口座</div>
+    <dl>
+      <dt>銀行名</dt><dd>三菱UFJ銀行</dd>
+      <dt>支店名</dt><dd>池上支店（イケガミ）</dd>
+      <dt>店番</dt><dd>116</dd>
+      <dt>預金種目</dt><dd>普通預金</dd>
+      <dt>口座番号</dt><dd>0190673</dd>
+      <dt>口座名義</dt><dd>レムケナツコ</dd>
+    </dl>
+    <div class="note">
+      ＊ もしくは、ドイツに法人口座がございます。ご希望の方は、お申込フォームの備考欄にその旨ご記入いただくか、事務局までご連絡ください。<br>
+      ＊ 日本の銀行・ドイツ法人口座いずれも、お振込手数料はお客様ご負担にてお願いいたします。<br>
+      ＊ お振込人名義は、お申込フォームのお名前と同一にしてください。
+    </div>
+  </div>
+
+  <h2>各プランのお振込金額</h2>
+  <div class="price-table">
+    <div class="row head">
+      <div class="plan">プラン</div>
+      <div class="early">早割（〜5/19 22時）</div>
+      <div class="reg">通常価格</div>
+    </div>
+    <div class="row">
+      <div class="plan">スタンダード（一括）</div>
+      <div class="early">231,000円</div>
+      <div class="reg">297,000円</div>
+    </div>
+    <div class="row">
+      <div class="plan">スタンダード（分割3回）</div>
+      <div class="early">月77,000円 × 3</div>
+      <div class="reg">月99,000円 × 3</div>
+    </div>
+    <div class="row">
+      <div class="plan">Palette（一括）</div>
+      <div class="early">165,000円</div>
+      <div class="reg">198,000円</div>
+    </div>
+    <div class="row">
+      <div class="plan">Palette（分割3回）</div>
+      <div class="early">月55,000円 × 3</div>
+      <div class="reg">月66,000円 × 3</div>
+    </div>
+    <div class="row">
+      <div class="plan">Sketch（一括）</div>
+      <div class="early">55,000円</div>
+      <div class="reg">77,000円</div>
+    </div>
+  </div>
+
+  <div class="alert">
+    <b>早割をご希望の方へ：</b>5/19(火) 22時までに、<b>お申込フォームの送信</b>と<b>お振込み</b>の両方を完了してください。期限を過ぎた場合は通常価格でのご案内となります。
+  </div>
+
+  <div class="form-box">
+    <h3>お申込フォーム</h3>
+    <p>下記のボタンよりフォームに進み、必要事項をご記入ください。<br>送信後、お振込先の詳細を自動返信メールでお送りします。</p>
+    <a href="#" class="cta">お申込フォームに進む</a>
+  </div>
+
+  <h2>お問い合わせ</h2>
+  <div class="contact">
+    ご不明な点がございましたら、お気軽にご連絡ください。<br>
+    <b>事務局：</b>THE THREAD 事務局<br>
+    <b>Email：</b>school@iob.bio
+  </div>
+
+  <a href="index.html" class="cta outline" style="margin-top:32px">トップページに戻る</a>
+
+</div>
+
+<footer>© Institut für Organic Business GmbH</footer>
+
+</body>
+</html>
